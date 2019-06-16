@@ -3,7 +3,7 @@ const Mongo = require('mongodb');
 const { Db, Server } = Mongo;
 
 const db = new Db('artists', new Server('localhost', 27017));
-db.open()
+db.openUri()
   .then(() => {
     db.command({
       collMod: 'artists',
